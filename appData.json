@@ -1,23 +1,29 @@
 [
         {
-			"imgUrl": "img/septa_placeholder.jpg",
 			"name": "Official SEPTA Website",
+			"author": "SEPTA",
+			"email": "veritas@septa.org",
 			"url": "http://www.septa.org/",
-			"description": "Find routes, news, events, and customer service.",
-			"tags": "Web"
+			"imgUrl": "img/septa_placeholder.jpg",
+			"tags": "Web,Free,Partial",
+			"description": "Find routes, news, events, and customer service."
 		},
 		{
-			"imgUrl": "img/septa_placeholder.jpg",
 			"name": "SEPTA Android App",
+			"author": "SEPTA",
+			"email": "veritas@septa.org",
 			"url": "https://play.google.com/store/apps/details?id=org.septa.android.app",
-			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips.",
-			"tags": "Android"
+			"imgUrl": "img/septa_placeholder.jpg",
+			"tags": "Android,Free,Open",
+			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips."
 		},
 		{
-			"imgUrl": "img/septa_placeholder.jpg",
 			"name": "SEPTA iOS App",
+			"author": "SEPTA",
+			"email": "veritas@septa.org",
 			"url": "https://itunes.apple.com/us/app/septa/id724915219?mt=8",
-			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips.",
-			"tags": "iOS"
+			"imgUrl": "img/septa_placeholder.jpg",
+			"tags": "iOS,Free,Open",
+			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips."
 		}
 ]

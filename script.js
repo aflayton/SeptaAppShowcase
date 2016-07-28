@@ -12,7 +12,8 @@ function showModal(obj)
 	content.innerHTML = "";
 	
 	content.innerHTML += "<img src=" + obj['imgUrl'] + "> <br>" +
-							"<h2>" + obj['name'] + "</h2> <br>"+
+							"<h2>" + obj['name'] + "</h2>"+
+							"<h4>By: " + obj['author'] + " (<a href='mailto:" + obj['email'] + "'>" + obj['email'] + "</a>)</h4>" +
 							"<p>" + obj['description'] + "</p> <br>" +
 							"<a href="+ obj['url'] +"><button class='linkBtn'>Link</button></a>";
 	modal.style.display = "block";
@@ -60,7 +61,7 @@ function showFilterModal()
 			}
 		
 		}
-		e.stopPropagation();
+		//e.stopPropagation();
 		
 	}
 }
@@ -76,7 +77,7 @@ function filter(keep)
 	var divs = appList.getElementsByTagName("div");
 	for (var i = 0; i < divs.length; i++)
 	{
-		if (divs[i].id != keep)
+		if (!divs[i].id.match(keep))
 		{
 			divs[i].hidden = true;
 		}
@@ -117,9 +118,9 @@ httpRequest.onreadystatechange = function()
 			var jsonData = JSON.parse(rawData);
 			for (var i = 0; i < jsonData.length; i++)
 			{
-					appList.innerHTML += "<div id=" + jsonData[i]['name'] + " data-tags=" + JSON.stringify(jsonData[i]['tags']) + " class='col-4'>" +
+					appList.innerHTML += "<div id='" + jsonData[i]['name'] + "' data-tags=" + JSON.stringify(jsonData[i]['tags']) + " class='col-4'>" +
 											"<h3>" + jsonData[i]['name'] + "</h3>" +
-											"<img class='appImg' src=" + jsonData[i]['imgUrl'] + " onclick=\'showModal(" + JSON.stringify(jsonData[i]) + ")\'>" + 
+											"<img class='appImg' src=" + jsonData[i]['imgUrl'] + " onclick='showModal(" + JSON.stringify(jsonData[i]) + ")'>" + 
 										"</div>";
 			}
 		}
