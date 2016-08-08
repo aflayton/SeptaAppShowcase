@@ -19,7 +19,7 @@ function showModal(obj)
 	modal.style.display = "block";
 	
 }
-
+/*
 function showFilterModal()
 {
 	content.innerHTML = "";
@@ -65,7 +65,8 @@ function showFilterModal()
 		
 	}
 }
-filterDiv.onclick = showFilterModal;
+*/
+//filterDiv.onclick = showFilterModal;
 
 function filter(keep)
 {
@@ -77,7 +78,7 @@ function filter(keep)
 	var divs = appList.getElementsByTagName("div");
 	for (var i = 0; i < divs.length; i++)
 	{
-		if (!divs[i].id.match(keep))
+		if (!divs[i].id.toLowerCase().match(keep.toLowerCase()))
 		{
 			divs[i].hidden = true;
 		}
@@ -118,7 +119,7 @@ httpRequest.onreadystatechange = function()
 			var jsonData = JSON.parse(rawData);
 			for (var i = 0; i < jsonData.length; i++)
 			{
-					appList.innerHTML += "<div id='" + jsonData[i]['name'] + "' data-tags=" + JSON.stringify(jsonData[i]['tags']) + " class='col-4'>" +
+					appList.innerHTML += "<div id='" + jsonData[i]['name'] + "' data-tags=" + JSON.stringify(jsonData[i]['tags']) + " class='col-4 appDiv'>" +
 											"<h3>" + jsonData[i]['name'] + "</h3>" +
 											"<img class='appImg' src=" + jsonData[i]['imgUrl'] + " onclick='showModal(" + JSON.stringify(jsonData[i]) + ")'>" + 
 										"</div>";

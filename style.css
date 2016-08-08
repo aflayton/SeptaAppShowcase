@@ -6,12 +6,23 @@ html{
 * {
     box-sizing: border-box;
 }
-
+body{
+	
+	background: url("septa_bg.png") repeat-y;
+	
+}
+div{
+	background-color: white;
+	border-radius: 10px
+}
+div.spacer{
+	background-color: transparent;
+}
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -42,7 +53,23 @@ html{
 	border: medium solid black;
 	border-radius: 10px;
 }
-
+.col-4.appDiv{
+	border: medium solid black;
+	border-radius: 10px;
+}
+.col-4.desc{
+	/*
+	border: medium solid black;
+	border-radius: 10px;
+	*/
+	color: red;
+}
+.col-8.header{
+	border: medium solid navy;
+	border-radius: 10px;
+	background-color: navy;
+	color: white;
+}
 .appImg{
 	opacity: 1;
 }
