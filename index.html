@@ -8,13 +8,15 @@
 	</head>
 	<body>
 		
-		<div class="col-8 header"><h1>SEPTA App Showcase</h1></div>
-
-		<div class="col-4 desc"><p><em>A place for developers to showcase their apps that use SEPTA's API.</em></p></div>
+		<div class="col-7 header"><h1>SEPTA App Showcase</h1></div>
+		<div class="col-2 spacer"></div>
+		<div class="col-3 desc"><p><em>A place for developers to showcase their apps that use SEPTA's API.</em></p></div>
 		<div class="col-12 spacer"></div>
-		<div class="col-4 topbar" id="filter">Filter</div>
-		<a href="https://github.com/aflayton/SeptaAppShowcase"><div class="col-4 topbar">Add your App</div></a>
-		<div class="col-4 topbar"><input id="search" type="search" placeholder="Search"></div>
+		<div class="col-2 topbar" id="filter">Filter</div>
+		<div class="col-3 spacer"></div>
+		<a href="https://github.com/aflayton/SeptaAppShowcase"><div class="col-2 topbar">Add your App</div></a>
+		<div class="col-3 spacer"></div>
+		<div class="col-2 topbar"><input id="search" type="search" placeholder="Search"></div>
 		<div class="col-12 spacer"></div>
 		<div id="appList">
 		</div>
@@ -23,21 +25,25 @@
 			</div>
 		</div>
 		<div id="checkboxarea" hidden="true">
-			<h3>Platform</h3>
+		
+			<h3>Platform Support</h3>
 			<label><input type="checkbox" value="Desktop" checked="true">Desktop</label>
 			<label><input type="checkbox" value="Web" checked="true">Web</label>
 			<label><input type="checkbox" value="Android" checked="true">Android</label>
 			<label><input type="checkbox" value="iOS" checked="true">iOS</label>
 
-			<h3>Pricing</h3>
-			<label><input type="checkbox" value="Free" checked="true">Free</label>
-			<label><input type="checkbox" value="Paid" checked="true">Paid</label>
+			<h3>Revenue Model</h3>
+			<label><input type="checkbox" value="None" checked="true">None (Free)</label>
+			<label><input type="checkbox" value="Ads" checked="true">Advertisements</label>
+			<label><input type="checkbox" value="Retail" checked="true">Retail</label>
 			
 			<h3>Source Distribution</h3>
 			<label><input type="checkbox" value="Open" checked="true">Open</label>
 			<label><input type="checkbox" value="Partial" checked="true">Partial</label>
 			<label><input type="checkbox" value="Closed" checked="true">Closed</label>
-			
+			<br>
+			<button id="select">Select All</button>
+			<button id="unselect">Unselect All</button>
 		</div>
 	</body>
 	<script src="script.js"></script>

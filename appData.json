@@ -6,7 +6,7 @@
 			"url": "http://www.septa.org/",
 			"imgUrl": "img/septa_placeholder.jpg",
 			"platforms": "Web",
-			"pricing": "Free",
+			"pricing": "None",
 			"source": "Partial",
 			"description": "Find routes, news, events, and customer service."
 		},
@@ -17,7 +17,7 @@
 			"url": "https://play.google.com/store/apps/details?id=org.septa.android.app",
 			"imgUrl": "img/septa_placeholder.jpg",
 			"platforms": "Android",
-			"pricing": "Free",
+			"pricing": "None",
 			"source": "Open",
 			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips."
 		},
@@ -28,7 +28,7 @@
 			"url": "https://itunes.apple.com/us/app/septa/id724915219?mt=8",
 			"imgUrl": "img/septa_placeholder.jpg",
 			"platforms": "iOS",
-			"pricing": "Free",
+			"pricing": "None",
 			"source": "Open",
 			"description": "The official SEPTA app brings our entire transit network directly to you with convenient access to schedule information, real-time updates, trip planning, fare options, social media connections, and Customer Service. This new app is perfect for customers on the go with your best SEPTA travel options right at your fingertips."
 		}

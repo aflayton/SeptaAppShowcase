@@ -1,4 +1,5 @@
 # Adding your App
+(Note: See the Wiki for more details)
 1. Fork this repository.
 2. Add your image file (max dimension size: 350 x 250) to the `/img` directory.
 3. Add your app info to the `appData.json` file.

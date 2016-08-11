@@ -19,7 +19,7 @@ function showModal(obj)
 	modal.style.display = "block";
 	
 }
-/*
+
 function showFilterModal()
 {
 	content.innerHTML = "";
@@ -27,54 +27,63 @@ function showFilterModal()
 	checkboxarea.hidden = false;
 	modal.style.display = "block";
 	
+	var checks = checkboxarea.getElementsByTagName("input");
+	
+	var select = document.getElementById("select");
+	var unselect = document.getElementById("unselect");
+	
+	select.onclick = function()
+	{
+		for (var k = 0; k < checks.length; k++)
+		{
+			checks[k].checked = true;
+		}
+	};
+	
+	unselect.onclick = function()
+	{
+		for (var k = 0; k < checks.length; k++)
+		{
+			checks[k].checked = false;
+		}
+	};
+	
+	
 	checkboxarea.addEventListener('click', checkFilter, false);
 	function checkFilter(e)
 	{
 		
 		var divs = appList.getElementsByTagName("div");
-		if (e.target.checked)
+		
+		for (var j = 0; j < divs.length; j++)
 		{
-			for (var j = 0; j < divs.length; j++)
+			divs[j].hidden = true;
+			for (var k = 0; k < checks.length; k++)
 			{
-				var tagArray = divs[j].dataset.tags.split(",");
-				for (tag in tagArray)
+				if (checks[k].checked)
 				{
-					if (e.target.value == tagArray[tag])
+					if (checks[k].value == divs[j].dataset.platform || checks[k].value == divs[j].dataset.price || checks[k].value == divs[j].dataset.source)
 					{
 						divs[j].hidden = false;
 					}
 				}
 			}
 		}
-		else
-		{
-			for (var j = 0; j < divs.length; j++)
-			{
-				var tagArray = divs[j].dataset.tags.split(",");
-				for (tag in tagArray)
-				{
-					if (e.target.value == tagArray[tag])
-					{
-						divs[j].hidden = true;
-					}
-				}
-			}
-		
-		}
-		//e.stopPropagation();
-		
 	}
+	
 }
-*/
-//filterDiv.onclick = showFilterModal;
+
+filterDiv.onclick = showFilterModal;
 
 function filter(keep)
 {
+	/*
 	var allFlag;
 	if (!keep)
 	{
 		allFlag = true;
 	}
+	*/
 	var divs = appList.getElementsByTagName("div");
 	for (var i = 0; i < divs.length; i++)
 	{
@@ -85,13 +94,17 @@ function filter(keep)
 		
 		else
 		{
-			divs[i].hidden = false;
+			if (!divs[i].hidden)
+			{
+				divs[i].hidden = false;
+			}
 		}
-		
+		/*
 		if (allFlag)
 		{
 			divs[i].hidden = false;
 		}
+		*/
 	}
 }
 
@@ -119,7 +132,7 @@ httpRequest.onreadystatechange = function()
 			var jsonData = JSON.parse(rawData);
 			for (var i = 0; i < jsonData.length; i++)
 			{
-					appList.innerHTML += "<div id='" + jsonData[i]['name'] + "' data-tags=" + JSON.stringify(jsonData[i]['tags']) + " class='col-4 appDiv'>" +
+					appList.innerHTML += "<div id='" + jsonData[i]['name'] + "' data-platform=" + jsonData[i]['platforms'] + " data-price=" + jsonData[i]['pricing'] + " data-source=" + jsonData[i]['source'] + " class='col-4 appDiv'>" +
 											"<h3>" + jsonData[i]['name'] + "</h3>" +
 											"<img class='appImg' src=" + jsonData[i]['imgUrl'] + " onclick='showModal(" + JSON.stringify(jsonData[i]) + ")'>" + 
 										"</div>";

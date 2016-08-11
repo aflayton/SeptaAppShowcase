@@ -49,22 +49,22 @@ div.spacer{
     display: block;
 }
 
-.col-4.topbar{
+.topbar{
 	border: medium solid black;
 	border-radius: 10px;
 }
-.col-4.appDiv{
+.appDiv{
 	border: medium solid black;
 	border-radius: 10px;
 }
-.col-4.desc{
+.desc{
 	/*
 	border: medium solid black;
 	border-radius: 10px;
 	*/
 	color: red;
 }
-.col-8.header{
+.header{
 	border: medium solid navy;
 	border-radius: 10px;
 	background-color: navy;
