@@ -1,3 +1,13 @@
+/**
+	OVERVIEW
+	This script mostly deals with handling the AJAX loading of the 'appData.json' file to populate the 'appList' div,
+	as well as handling functionality of modals and onclick events.
+*/
+
+/**
+	DATA
+	document level object references
+*/
 var appList = document.getElementById("appList");
 var modal = document.getElementById("modal");
 var content = document.getElementById("content");
@@ -7,6 +17,10 @@ var checkboxarea = document.getElementById("checkboxarea");
 
 var httpRequest = new XMLHttpRequest();
 
+/**
+	PARAM
+	obj - an entry in appData.json 
+*/
 function showModal(obj)
 {
 	content.innerHTML = "";
@@ -20,6 +34,9 @@ function showModal(obj)
 	
 }
 
+/**
+	event handler to show checkboxarea in modal when filter div is clicked
+*/
 function showFilterModal()
 {
 	content.innerHTML = "";
@@ -32,6 +49,9 @@ function showFilterModal()
 	var select = document.getElementById("select");
 	var unselect = document.getElementById("unselect");
 	
+	/**
+		checks all checkboxes
+	*/
 	select.onclick = function()
 	{
 		for (var k = 0; k < checks.length; k++)
@@ -40,6 +60,9 @@ function showFilterModal()
 		}
 	};
 	
+	/**
+		unchecks all checkboxes
+	*/
 	unselect.onclick = function()
 	{
 		for (var k = 0; k < checks.length; k++)
@@ -50,6 +73,9 @@ function showFilterModal()
 	
 	
 	checkboxarea.addEventListener('click', checkFilter, false);
+	/**
+		hides all subdivs in appList div and then shows the relevent ones based on filter
+	*/
 	function checkFilter(e)
 	{
 		
@@ -75,19 +101,15 @@ function showFilterModal()
 
 filterDiv.onclick = showFilterModal;
 
-function filter(keep)
+/**
+	filters appList based on contents of searchbox found in apps' titles
+*/
+function searchFilter(keep)
 {
-	/*
-	var allFlag;
-	if (!keep)
-	{
-		allFlag = true;
-	}
-	*/
 	var divs = appList.getElementsByTagName("div");
 	for (var i = 0; i < divs.length; i++)
 	{
-		if (!divs[i].id.toLowerCase().match(keep.toLowerCase()))
+		if (!divs[i].id.toLowerCase().match(keep.toLowerCase())) // both are lowercased before being matched
 		{
 			divs[i].hidden = true;
 		}
@@ -99,21 +121,21 @@ function filter(keep)
 				divs[i].hidden = false;
 			}
 		}
-		/*
-		if (allFlag)
-		{
-			divs[i].hidden = false;
-		}
-		*/
 	}
 }
 
+/**
+	event handler for when searchbox contents change
+*/
 search.oninput = function()
 {
 	var query = search.value;
-	filter(query);
+	searchFilter(query);
 };
 
+/**
+	closes modal when the gray part is clicked
+*/
 window.onclick = function(event)
 {
 	if (event.target == modal) 
@@ -122,6 +144,9 @@ window.onclick = function(event)
 	}
 };
 
+/**
+	asynchronous loading event handler
+*/
 httpRequest.onreadystatechange = function()
 {
 	if (httpRequest.readyState === XMLHttpRequest.DONE)

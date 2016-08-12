@@ -1,28 +1,36 @@
-html{
+html
+{
 	text-align: center;
 	font-family: sans-serif;
 }
 
-* {
+* 
+{
     box-sizing: border-box;
 }
-body{
+body
+{
 	
 	background: url("septa_bg.png") repeat-y;
 	
 }
-div{
+div
+{
 	background-color: white;
 	border-radius: 10px
 }
-div.spacer{
+div.spacer
+{
 	background-color: transparent;
 }
 /* For mobile phones: */
-[class*="col-"] {
+/* Expands each div to 100% on screens smaller than 1200px */
+[class*="col-"] 
+{
     width: 100%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) 
+{
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -38,46 +46,51 @@ div.spacer{
     .col-12 {width: 100%;}
 }
 
-[class*="col-"] {
+[class*="col-"] 
+{
     float: left;
     padding: 15px;
 }
 
-.row::after {
+.row::after 
+{
     content: "";
     clear: both;
     display: block;
 }
 
-.topbar{
+.topbar
+{
 	border: medium solid black;
 	border-radius: 10px;
 }
-.appDiv{
+.appDiv
+{
 	border: medium solid black;
 	border-radius: 10px;
 }
-.desc{
-	/*
-	border: medium solid black;
-	border-radius: 10px;
-	*/
+.desc
+{
 	color: red;
 }
-.header{
+.header
+{
 	border: medium solid navy;
 	border-radius: 10px;
 	background-color: navy;
 	color: white;
 }
-.appImg{
+.appImg
+{
 	opacity: 1;
 }
-.appImg:hover{
+.appImg:hover
+{
 	opacity: 0.5;
 	cursor: pointer;
 }
-.linkBtn:hover{
+.linkBtn:hover
+{
 	cursor: pointer;
 }
 #filter:hover
