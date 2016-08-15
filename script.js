@@ -74,7 +74,7 @@ function showFilterModal()
 	
 	checkboxarea.addEventListener('click', checkFilter, false);
 	/**
-		hides all subdivs in appList div and then shows the relevent ones based on filter
+		hides all subdivs in appList div and then shows the relevant ones based on filter
 	*/
 	function checkFilter(e)
 	{
@@ -84,11 +84,14 @@ function showFilterModal()
 		for (var j = 0; j < divs.length; j++)
 		{
 			divs[j].hidden = true;
+			var platforms = divs[j].dataset.platform.split(",");
+			
 			for (var k = 0; k < checks.length; k++)
-			{
+			{	
 				if (checks[k].checked)
 				{
-					if (checks[k].value == divs[j].dataset.platform || checks[k].value == divs[j].dataset.price || checks[k].value == divs[j].dataset.source)
+					
+					if (platforms.indexOf(checks[k].value) != -1 || checks[k].value == divs[j].dataset.price || checks[k].value == divs[j].dataset.source)
 					{
 						divs[j].hidden = false;
 					}
